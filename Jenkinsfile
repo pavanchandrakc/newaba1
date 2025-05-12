@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk-17'               // Set this name in Jenkins > Global Tool Configuration
+        jdk 'JDK'               // Set this name in Jenkins > Global Tool Configuration
         dockerTool 'docker'
     }
 
     environment {
-        DOCKER_IMAGE = 'sathwikpadmanabha/devopsfinal'
+        DOCKER_IMAGE = 'pavanchandrakc/pavandevops'
         DOCKER_TAG = "${BUILD_NUMBER}"
     }
 
@@ -23,7 +23,7 @@ pipeline {
                         body: """<p>Stage 'Checkout' finished with status: ${currentBuild.result}</p>
                                  <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                         mimeType: 'text/html',
-                        to: 'sathwikpadmanabha@gmail.com'
+                        to: 'pavanchandra2599@gmail.com'
                     )
                 }
             }
@@ -46,7 +46,7 @@ pipeline {
                         body: """<p>Stage 'Build' finished with status: ${currentBuild.result}</p>
                                  <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                         mimeType: 'text/html',
-                        to: 'sathwikpadmanabha@gmail.com'
+                        to: 'pavanchandra2599@gmail.com'
                     )
                 }
             }
@@ -66,7 +66,7 @@ pipeline {
                         body: """<p>Stage 'Test' finished with status: ${currentBuild.result}</p>
                                  <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                         mimeType: 'text/html',
-                        to: 'sathwikpadmanabha@gmail.com'
+                        to: 'pavanchandra2599@gmail.com'
                     )
                 }
             }
@@ -87,7 +87,7 @@ pipeline {
                         body: """<p>Stage 'Build Docker Image' finished with status: ${currentBuild.result}</p>
                                  <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                         mimeType: 'text/html',
-                        to: 'sathwikpadmanabha@gmail.com'
+                        to: 'pavanchandra2599@gmail.com'
                     )
                 }
             }
@@ -113,7 +113,7 @@ pipeline {
                         body: """<p>Stage 'Push to Docker Hub' finished with status: ${currentBuild.result}</p>
                                  <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                         mimeType: 'text/html',
-                        to: 'sathwikpadmanabha@gmail.com'
+                        to: 'pavanchandra2599@gmail.com'
                     )
                 }
             }
@@ -127,7 +127,7 @@ pipeline {
                 body: """<p>Pipeline Status: ${currentBuild.result}</p>
                          <p>Check console output at <a href='${BUILD_URL}'>${BUILD_URL}</a></p>""",
                 mimeType: 'text/html',
-                to: 'sathwikpadmanabha@gmail.com'
+                to: 'pavanchandra2599@gmail.com'
             )
         }
     }
